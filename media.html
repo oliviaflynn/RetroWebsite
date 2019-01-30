@@ -77,10 +77,10 @@
             <hr>
             <!--XMLHTTP REQUEST below-->
             <h1>Below is an example of a XMLHttpRequest:</h1>
-            <div id="demo">Click below to load some info about a retro gaming systems:</div>
+            <div id="demo">Click below to load some info from a XMLHTTP Request</div>
             <div id="img"></div>
             <br />
-            <button type="button" onclick="loadDoc()">Load Game Info from MobyGames.com</button>
+            <button type="button" onclick="loadDoc()">Load Request</button>
 
             <script>
                 // test this feature using Firefox (preferred option)
@@ -103,7 +103,7 @@
                         }
                     };
 
-                    var fileName = 'https://api.mobygames.com/v1/platforms?api_key=YHWI1NMi6RGPgvtNLtrw1g==';
+                    var fileName = 'https://jsonplaceholder.typicode.com/todos/10';
                     xhttp.open('GET', fileName, true);
                     xhttp.send(null);
                 }
