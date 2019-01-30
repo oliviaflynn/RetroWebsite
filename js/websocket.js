@@ -1,4 +1,10 @@
-var wsUri = "ws://echo.websocket.org";
+if(window.location.protocol == File) { 
+	var wsUri = "wss://echo.websocket.org";
+}
+else {
+  var wsUri = "ws://echo.websocket.org";
+}
+
 var output;
 
 function init() {
