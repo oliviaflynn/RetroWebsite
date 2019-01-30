@@ -1,0 +1,136 @@
+<!--1. Create HTML5 Web Pages using HTML5 Elements and attributes and CSS3 Stylesheets-->
+<!DOCTYPE html>
+<html manifest="offline.appcache" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Retro Games Media Page</title>
+    <!--CSS3 Stylesheet link below-->
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!--div container begin-->
+    <div id="container">
+
+        <header>
+            <!--Responsive Nav Bar Below-->
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="index.html">Home</a>
+                    <a href="games.html">Games</a>
+                    <a href="media.html" class="active">Media</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="mediaMain">
+            <h1 style="background-color: orange;">All features below were tested and working in FireFox 64.0.2</h1>
+            <h2 style="background-color: skyblue;">*Chrome and other browsers may block these local scripts*</h2>
+            <!--Web worker stopwatch below-->
+            <div id="webWorker">
+                <h1>Web worker stopwatch below:</h1>
+                <h3>Track how much time you spend playing games!</h3>
+
+                <div class="timer" id="timer">00:00</div>
+                <div class="buttons">
+                    <button onclick="startTimer()" id="button1">Start</button>
+                    <button onclick="stopTimer()" id="button2">Stop</button>
+                </div>
+
+                <script>
+                    //Web WorkerTimer Below
+                var w = null; // initialize variable
+
+                // function to start the timer
+                function startTimer() {
+                    // First check whether Web Workers are supported
+                    if (typeof (Worker) !== "undefined") {
+                        // Check whether Web Worker has been created. If not, create a new Web Worker based on the Javascript file simple-timer.js
+                        if (w == null) {
+                            w = new Worker("js/webworker.js");
+                        }
+                        // Update timer div with output from Web Worker
+                        w.onmessage = function (event) {
+                            document.getElementById("timer").innerHTML = event.data;
+                        };
+                    } else {
+                        // Web workers are not supported by your browser
+                        document.getElementById("timer").innerHTML = "Sorry, your browser does not support Web Workers ...";
+                    }
+                }
+
+                // function to stop the timer
+                function stopTimer() {
+                    w.terminate();
+                    timerStart = true;
+                    w = null;
+                }
+            </script>
+            </div>
+            <hr>
+            <!--XMLHTTP REQUEST below-->
+            <h1>Below is an example of a XMLHttpRequest:</h1>
+            <div id="demo">Click below to load some info about a retro gaming systems:</div>
+            <div id="img"></div>
+            <br />
+            <button type="button" onclick="loadDoc()">Load Game Info from MobyGames.com</button>
+
+            <script>
+                // test this feature using Firefox (preferred option)
+                // it may also be tested using Microsoft Edge
+                function loadDoc() {
+                    // create a new XMLHttpRequest object
+                    var xhttp = new XMLHttpRequest();
+
+
+                    // define the function to be called when the readyState property changes
+                    xhttp.onreadystatechange = function () {
+                        // readyState 4 => request finished and response is ready
+                        if (xhttp.readyState == 4) {
+                            // status 200 => successful HTTP requests
+                            if (xhttp.status == 200) {
+                                // responseText => returns the response data as a string
+                                document.getElementById("demo").innerHTML = xhttp.responseText;
+
+                            }
+                        }
+                    };
+
+                    var fileName = 'https://api.mobygames.com/v1/platforms?api_key=YHWI1NMi6RGPgvtNLtrw1g==';
+                    xhttp.open('GET', fileName, true);
+                    xhttp.send(null);
+                }
+            </script>
+
+            <hr>
+
+            <h1>Here, we can track your current location:</h1>
+            <button onclick="getLocation()" class="mapButton">Click for user location</button><br />
+            <label id="geolocationDemo"></label><br>
+            <iframe id="map" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+            </iframe>
+
+
+
+        </main>
+
+        <footer>
+            <p>Website by Olivia Flynn &copy;2019</p>
+        </footer>
+
+        <!--div container end-->
+    </div>
+
+    <!--Javascript file Link below-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

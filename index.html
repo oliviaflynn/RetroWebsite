@@ -1,0 +1,104 @@
+<!--If you are viewing this website using local files, you may view a live version at: -->
+<!--1. Create HTML5 Web Pages using HTML5 Elements and attributes and CSS3 Stylesheets-->
+<!DOCTYPE html >
+<html manifest="offline.appcache" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Retro Games Homepage</title>
+  <!--CSS3 Stylesheet link below-->
+  <link href="css/main.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <!--div container begin-->
+  <div id="container">
+
+    <header>
+      <!--Responsive Nav Bar Below-->
+      <nav>
+        <div class="topnav" id="myTopnav">
+          <a href="index.html" class="active">Home</a>
+          <a href="games.html">Games</a>
+          <a href="media.html">Media</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main id="indexMain">
+      <article id="featurearticle">
+        <h1>Retrogaming;</h1>
+        <p>also known as classic gaming and old school gaming, is the playing or collecting of older personal
+          computer, console, and arcade video games in contemporary times. Usually retrogaming is based upon systems
+          that are obsolete or discontinued. </p>
+        <video width="320" height="240" autoplay loop controls>
+          <source src="video/arcade.mp4" type="video/mp4">
+
+          Your browser does not support the video tag.
+        </video>
+
+      </article>
+
+      <!--Websocket begin-->
+      <div id="websocket" style="border: black 1px solid;">
+        <h2>WebSocket Messenger</h2>
+        <h3>Here, the websocket application opens a connection, gets a response and closes the connection on page load.</h3>
+        <div id="output" style="background-color: bisque;"></div>
+
+
+      </div>
+      <!--Websocket End-->
+
+      <!--Image below with CSS3 Transition effect in the main.css file-->
+      <div id="css3transition">
+        <h2>Hover over the image below to see a CSS3 transition effect</h2>
+        <img id="featureimg" src="img/luigi.png" alt="Picture of Luigi toy from Super Mario Bros." style="border:black 1px solid;" />
+      </div>
+
+      <!--CSS Animation start-->
+      <div id="animation">
+        <h2>CSS3 Animation</h2>
+        <div class="pista">
+          <div class="luces"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="tras-come"></div>
+          <div class="packman">
+            <div class="comecocos"></div>
+          </div>
+          <div class="fantasmas">
+            <div class="fantasma tres">
+              <div class="ojo"></div>
+              <div class="ojo"></div>
+            </div>
+            <div class="fantasma uno">
+              <div class="ojo"></div>
+              <div class="ojo"></div>
+            </div>
+            <div class="fantasma dos">
+              <div class="ojo"></div>
+              <div class="ojo"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--animation end-->
+
+
+    </main>
+
+    <footer>
+      <p>Website by Olivia Flynn &copy;2019</p>
+    </footer>
+
+    <!--div container end-->
+  </div>
+  <!--Javascript file Link below-->
+  <script src="js/websocket.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!--1. Create HTML5 Web Pages using HTML5 Elements and attributes and CSS3 Stylesheets-->
+<!DOCTYPE html>
+<html manifest="offline.appcache" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Retro Games Contact Page</title>
+    <!--CSS3 Stylesheet link below-->
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--div container begin-->
+    <div id="container">
+
+        <header>
+            <!--Responsive Nav Bar Below-->
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="index.html">Home</a>
+                    <a href="games.html" class="active">Games</a>
+                    <a href="media.html">Media</a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <h1 style="text-align: center; font-family: monospace;">Here you can play some simple javascript games and
+                see some HTML5 features</h1>
+            <div id="gameGrid">
+                <div id="iframeGame">
+                    <h1>iFrame Game</h1>
+                    <div id="result">Which option below is a retro gaming system?</div>
+                    <iframe id="iframe" width="600px" height="400px" src="img/cover.jpg" style="border: black 5px solid;"></iframe>
+                    <br />
+                    <button class="iframeGameButton" type="button" onclick="setURL('img/switch.jpeg'); setSwitch()">Nintendo
+                        Switch</button>
+                    <h2>or</h2>
+                    <button class="iframeGameButton" type="button" onclick="setURL('img/snes.jpeg'); setSnes()">Super
+                        Nintendo Entertainment System</button>
+
+                </div>
+
+                <div id="formGame">
+                    <h1>Retro Gaming Form</h1>
+                    <h2>Submit for more information</h2>
+                    <form name="RegForm" onsubmit="return formValidate()" method="post" action="formresult.html">
+                        <p>Name: <input type="text" size=65 name="Name"> </p><br>
+                        <p> Address: <input type="text" size=65 name="Address"> </p><br>
+                        <p>E-mail Address: <input type="email" size=65 name="EMail"> </p><br>
+                        <p>Password: <input type="password" size=65 name="Password"> </p><br>
+                        <p>Telephone: <input type="text" size=65 name="Telephone"> </p><br>
+
+                        <p>SELECT YOUR CONSOLE
+                            <select type="text" value="" name="Console">
+                                <option></option>
+                                <option>Nintendo SNES</option>
+                                <option>Sega Mega Drive</option>
+                                <option>Atari 2600</option>
+                                <option>Magnavox Odyssey</option>
+                                <option>Gameboy</option>
+                            </select></p><br><br>
+                        <p>Comments: <textarea cols="55" name="Comment">  </textarea></p>
+                        <p><input type="submit" value="Send" name="Submit">
+                            <input type="reset" value="Reset" name="Reset">
+                        </p>
+                    </form>
+                </div>
+                <div id="svg">
+                    <h2>Simple Interactive SVG</h2>
+                    <h3>Hover over the SVG</h3>
+                    <svg height="200" width="500" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+
+                        <ellipse stroke-width="10" stroke="black" fill="yellow" cx="4cm" cy="2cm" ry="1cm" rx="2cm">
+                            <animate fill="freeze" dur="0.1s" to="blue" from="yellow" attributeName="fill" begin="mouseover" />
+                            <animate fill="freeze" dur="0.1s" to="yellow" from="blue" attributeName="fill" begin="mouseout" />
+                        </ellipse>
+                    </svg>
+                </div>
+
+                <div id="canvas">
+                    <h2>Sierpinski triangle in HTML5 Canvas</h2>
+                    <canvas id="c" width="800" height="600" style="background-color:#666" />
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>Website by Olivia Flynn &copy;2019</p>
+        </footer>
+
+        <!--div container end-->
+    </div>
+    <!--Javascript file Link below-->
+    <script src="js/canvas.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
