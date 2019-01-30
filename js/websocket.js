@@ -1,7 +1,12 @@
-if(window.location.protocol == File) { 
-	var wsUri = "wss://echo.websocket.org";
-}
-else {
+switch(window.location.protocol) {
+  case 'http:':
+  case 'https:':
+  var wsUri = "wss://echo.websocket.org";
+    break;
+  case 'file:':
+  var wsUri = "ws://echo.websocket.org";
+    break;
+  default: 
   var wsUri = "ws://echo.websocket.org";
 }
 
