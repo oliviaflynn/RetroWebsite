@@ -77,11 +77,6 @@ p {
 /*Adaptive Navigation Below
 8. Implement an adaptive User Interface
 */
-.fa-navicon:before,
-.fa-reorder:before,
-.fa-bars:before {
-  content: "\f0c9"
-}
 
 .topnav {
   overflow: hidden;
