@@ -13,7 +13,8 @@ function myFunction() {
 
 //Games Page Functions
 //Function for changing iFrame Image depending on user choice.
-//2.B The .innerHTML is an example of manipulating the HTML DOM
+//2. Use JavaScript with HTML5 for at least one of the following: Handle events, Manipulate HTML DOM, Extend objects
+// The .innerHTML is an example of manipulating the HTML DOM
 function setURL(url) {
   document.getElementById('iframe').src = url;
 }

@@ -1,12 +1,6 @@
-/*CSS3 Stylesheet*/
-
-/*Google Fonts*/
-
-@font-face {
-  font-family: 'Major Mono Display', monospace;
-  src: url("../fonts/MajorMonoDisplay-Regular.ttf") format('regular');
-}
-
+/*5. Use CSS style sheets and selectors to style HTML5 to style block elements
+and texts
+*/
 body {
   margin: 0;
 }
@@ -16,7 +10,7 @@ body {
 }
 
 footer {
-  font-family: 'Major Mono Display', monospace;
+  font-family: monospace;
   font-size: 10pt;
   background-color: #A81E14;
   padding: 0.5%;
@@ -80,7 +74,9 @@ p {
   font-size: 20pt;
 }
 
-/*Adaptive Navigation Below*/
+/*Adaptive Navigation Below
+8. Implement an adaptive User Interface
+*/
 .fa-navicon:before,
 .fa-reorder:before,
 .fa-bars:before {
